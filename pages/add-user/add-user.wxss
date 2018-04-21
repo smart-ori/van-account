@@ -1,0 +1,42 @@
+page {
+  background-color: #f0f0f0
+}
+.add-user {
+  padding: 20rpx;
+  background-color: #ffffff;
+  font-size: 14px;
+}
+.add-user>label{
+  display: flex;
+  align-items: flex-end;
+  margin: 20rpx 0;
+  min-width: 100rpx
+}
+.add-user>label .label{
+  min-width: 140rpx;
+}
+.add-user label input {
+  flex: 1;
+  height: 80rpx;
+  border-bottom: solid 1px #ddd;
+  font-size: 14px;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.add-user label input.active{
+  border-bottom: solid 2px #1AAD19
+}
+.sex,.type{
+  display: flex;
+  justify-content: center;
+  margin: 20rpx 0;
+}
+.sex label,.type label{
+  width: 130rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 70rpx;
+}
+.add-user .submit{
+  margin: 30rpx 0 10rpx 0;
+}

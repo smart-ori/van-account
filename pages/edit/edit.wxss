@@ -1,0 +1,52 @@
+/* pages/edit/edit.wxss */
+page{
+  background-color: #f8f8f8;
+}
+.add-user{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20rpx;
+}
+.user-list{
+  width: 100%;
+  display: felx;
+  flex-direction: column;
+  margin-bottom: 150rpx;
+  overflow: auto;
+}
+.user-list .item{
+  display: flex;
+  font-size: 14px;
+  margin: 10rpx 0;
+  padding: 20rpx;
+  border-bottom: solid 1px #eee;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.user-list .item .user{
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+.user-list .item .user .info{
+  display: flex;
+  flex: 1;
+}
+.user-list .item .tem{
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+}
+.submit{
+  width: 100%;
+  margin-bottom: 20rpx;
+  padding: 0 10rpx;
+  position: fixed;
+  bottom: 0;
+  box-sizing: border-box;
+}
+.submit button{
+  font-size: 14px;
+}

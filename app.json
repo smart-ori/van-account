@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/add-user/add-user",
+    "pages/edit/edit",
+    "pages/bill/bill"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/index.png",
+        "selectedIconPath": "img/index_active.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/edit/edit",
+        "iconPath": "img/edit.png",
+        "selectedIconPath": "img/edit_active.png",
+        "text": "编辑"
+      },
+      {
+        "pagePath": "pages/bill/bill",
+        "iconPath": "img/bill.png",
+        "selectedIconPath": "img/bill_active.png",
+        "text": "账单"
+      }
+    ]
+  }
+}

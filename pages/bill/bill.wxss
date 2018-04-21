@@ -1,0 +1,22 @@
+page {
+  height: 100%;
+
+}
+.bill{
+  height: 100%;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.bill .switch{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10rpx;
+  background: linear-gradient(to right, #F9C742, #FEE062, #F9C742);
+  font-size: 14px;
+  color: #888;
+}
+
+.bill .main{
+  flex: 1;
+}

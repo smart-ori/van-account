@@ -1,0 +1,69 @@
+<!--component/tem-bill/tem-bill.wxml-->
+<!-- <text>component/tem-bill/tem-bill.wxml</text> -->
+<view class="tem-bill">
+  <view class="head">
+    <view class="time">2018-4-12</view>
+    <view class="income">
+      <view>收入金额：</view>
+      <view class="money">￥200</view>
+    </view>
+    <view class="pay">
+      <view>支出金额：</view>
+      <view class="money">￥100</view>
+    </view>
+    <!-- <view class="pay-tem">
+      <view>临时支出：</view>
+      <view class="money">￥50</view>
+    </view> -->
+    <view class="earn">
+      <view>净赚：</view>
+      <view class="money">￥50</view>
+    </view>
+  </view>
+
+  <view class="detail">
+    <view class="title">明细</view>
+
+    <view class="time item">
+      <view class="msg">时间：</view>
+      <view class="info">2018-4-12</view>
+    </view>
+
+    <view class="people item">
+      <view class="total">
+        <view class="msg">总人数：</view>
+        <view class="num">10人</view>
+      </view>
+      <view class="info">
+        <view class="man">
+          <view class="msg">男：</view>
+          <view class="num">5人</view>
+        </view>
+        <view class="woman">
+          <view class="msg">女：</view>
+          <view class="num">5人</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="income item">
+      <view class="msg">收入金额：</view>
+      <view class="money">￥200</view>
+    </view>
+
+    <view class="pay item">
+      <view class="msg">支出金额：</view>
+      <view class="money">￥100</view>
+    </view>
+
+    <view class="pay-tem item">
+      <view class="msg">临时支出：</view>
+      <view class="money">￥50</view>
+    </view>
+
+    <view class="earn item">
+      <view class="msg">净赚：</view>
+      <view class="money">￥50</view>
+    </view>
+  </view>
+</view>
