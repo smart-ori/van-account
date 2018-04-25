@@ -31,6 +31,7 @@ Page({
     this.setData({
       userList: this.data.userList
     })
+    console.log(this.data.userList)
     
   },
   // 临时结账
@@ -71,6 +72,11 @@ Page({
         title: res.data.msg,
         icon: 'none'
       })
+      if (res.data.success) {
+        wx.switchTab({
+          url: '../index/index',
+        })
+      }
     })
   },
   // 点击 添加人员

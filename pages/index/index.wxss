@@ -1,11 +1,71 @@
 /**index.wxss**/
 page{
-    background-color: #FAF8F8;
+    background-color: #fff;
+    font-family: KaiTi;
+}
+.body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.self{
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  border-bottom: solid 1px #ddd;
+  background-image: radial-gradient(circle at left top,#1F8C31, #4ECC62);
+  color: #fff;
+}
+.self-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20rpx;
+}
+.total-info{
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  justify-content: center;
+  height: 100%;
+  margin-left: 20rpx;
+}
+.total-info .time{
+  background-color: #64BF73;
+  padding-left: 15rpx;
+  border-radius: 100rpx;
+  margin: 10rpx 0;
+}
+.total-info .box{
+  display: flex;
+}
+.total-info .box>view{
+  margin-right: 20rpx;
+}
+
+.self .head-img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.self .name{
+  font-size: 14px;
+}
+
+.hr{
+  margin-top: 5rpx;
+  background-color: #ddd;
+  height: 10rpx;
 }
 .user-list {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  background-color: #f8f8f8;
 }
 
 .user-list .item{
@@ -30,6 +90,20 @@ page{
   justify-content: space-around;
   overflow: hidden;
   box-shadow: 0 0 10px #999;
+  background-image: radial-gradient(at 50% 78%, #4dfd47 8%,#23e621,#028500  );
+}
+.user-list .item .content .name{
+  width: 111rpx;
+  height: 65rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #555;
+  font-weight: 900;
+  font-size: 16px;
+  
+  background-image: linear-gradient(180deg, rgba(255,255,255,1),  rgba(255,255,255,0) 90%);
+  line-height: 75rpx;
+  margin-top: 8rpx;
 }
 .user-list .item .content .tem{
   padding: 5rpx 0;
@@ -37,6 +111,17 @@ page{
   width: 100%;
   text-align: center;
   font-weight: 600;
+  background-image: radial-gradient(at 50% 78%, yellow 8%, orange,red);
+  color: #3163D1;
+  font-size: 16px;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-list .item .content .sex{
+  color: #555;
+  font-size: 14px;
 }
 .user-list .item.active .content{
   background-color: #7BD8C5;
@@ -45,3 +130,37 @@ page{
   background-color: #FFA3A3;
 }
 
+.no-staff{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #999;
+}
+.sigh{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 100rpx;
+  text-align: center;
+  line-height: 200rpx;
+  border: solid 8px #666;
+  border-radius: 50%;
+  font-size: 60px;
+  color: #444;
+  font-weight: 900;
+}
+.no-staff .info {
+  margin: 40rpx 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.loading{
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
