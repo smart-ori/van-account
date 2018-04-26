@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tem-bill": "../../component/tem-bill/tem-bill",
+    "week-bill": "../../component/week-bill/week-bill"
+  }
+}

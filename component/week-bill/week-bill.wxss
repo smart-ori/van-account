@@ -1,0 +1,51 @@
+/* component/week-bill/week-bill.wxss */
+.week{
+  font-size: 14px;
+}
+.week .select{
+  background-color: #f8f8f8;
+  color: #666;
+  padding: 16rpx;
+  border-bottom: solid 1px #ddd;
+}
+.week .time{
+  background-color: #f0f0f0;
+  padding: 16rpx;
+  border-bottom: solid 1px #ddd;
+}
+.week .time .detail{
+  font-size: 12px;
+  color: #888;
+}
+.week .week-bill{
+  background-color: #fff;
+  padding: 16rpx;
+}
+.week .week-bill .item{
+  display: flex;
+  align-items: center;
+}
+.week .week-bill .item .week-day{
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  background-color: red;
+  border-radius: 50%;
+}
+.week .week-bill .item .people-money{
+  margin-left: 20rpx;
+}
+.week .week-bill .item .people-money .people {
+  display: flex;
+}
+.week .week-bill .item .people-money .people .woman{
+  margin-left: 50rpx;
+}
+.week .week-bill .item .people-money .money{
+  font-size: 12px;
+  color: #999;
+}

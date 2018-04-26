@@ -1,0 +1,16 @@
+<view class="bill">
+  <view class="switch">
+    <view wx:if="{{billType==='tem'}}" data-type='week' bindtap="selectBill">
+      查看周账单 >
+    </view>
+    <view wx:else data-type='tem' bindtap="selectBill">
+      临时账单 >
+    </view>
+    
+  </view>
+   <view class="main">
+      <tem-bill wx:if="{{billType==='tem'}}"></tem-bill>  
+      <week-bill wx:else></week-bill>  
+  </view> 
+  
+</view>
