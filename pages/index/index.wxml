@@ -7,7 +7,7 @@
       <view class="name">{{userInfo.nickName}}</view>
     </view>
     <view class="total-info">
-      <view class="time">2018-4-25</view>
+      <view class="time">{{checkWorkdata.checkTime}}</view>
       <view class="box">
         <view class="total">总人数：{{checkWorkdata.totalNumber}}</view>
         <view class="total-man">男：{{checkWorkdata.totalManNumber}}</view>
@@ -22,7 +22,7 @@
     <view class="item active" wx:for="{{userList}}" wx:key="name">
       <view class="content">
         <view class="name">{{item.workerName}}</view>
-        <view class="tem" wx:if="{{item.type===1}}">临</view> 
+        <view class="tem" wx:if="{{item.type===1}}">已结账</view> 
         <view class="sex">{{item.sex===1?'男':'女'}}</view>
       </view>
       
@@ -31,7 +31,7 @@
   </view>
   <view wx:else>
     <view class="no-staff">
-      <view class="sigh">！</view>
+      <view class="sigh">!</view>
       <view class="info">暂无工作人员出勤，请添加出勤工作人员！</view>
       <button class="weui-btn" type="primary" bindtap='editStaff'>添加出勤人员</button>
     </view>

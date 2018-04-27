@@ -47,11 +47,14 @@ App({
               code: res.code
             },
             success: res => {
+              this.globalData.isLogin = res.data.success
               if (res.data.success) {
                 this.globalData.token = res.data.body.token
                 wx.setStorageSync('token', res.data.body.token)
+                resolve(res)
+              } else {
+                reject(res)
               }
-              resolve(res)
             },
             fail: err => {
               wx.showToast({
@@ -92,6 +95,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    token: ''
+    token: '',
+    isLogin: false
   }
 })

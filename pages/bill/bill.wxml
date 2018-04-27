@@ -9,7 +9,7 @@
     
   </view>
    <view class="main">
-      <tem-bill wx:if="{{billType==='tem'}}"></tem-bill>  
+      <tem-bill tem-bill="{{temBill}}" wx:if="{{billType==='tem'}}"></tem-bill>  
       <week-bill wx:else></week-bill>  
   </view> 
   

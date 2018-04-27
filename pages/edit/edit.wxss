@@ -14,6 +14,7 @@ page{
   flex-direction: column;
   margin-bottom: 150rpx;
   overflow: auto;
+  height: calc(100vh - 230rpx);
 }
 .user-list .item{
   display: flex;
@@ -24,6 +25,10 @@ page{
   box-sizing: border-box;
   background-color: #fff;
 }
+.user-list .item.active{
+  background-color: #1AAD19;
+  color: #fff;
+}
 .user-list .item .user{
   display: flex;
   align-items: center;
@@ -32,12 +37,29 @@ page{
 .user-list .item .user .info{
   display: flex;
   flex: 1;
+  margin-left: 20rpx;
 }
-.user-list .item .tem{
+.user-list .item .check{
   display: flex;
   flex: 1;
   justify-content: space-around;
   align-items: center;
+}
+.user-list .item .check .info{
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background-color: #eee;
+  color: #666;
+  border-radius: 50%;
+  border: solid 1px #666;
+}
+.user-list .item .check .info.active{
+  background-color: #FF1472;
+  color: #fff;
+  border-color: #E80B63;
+  box-shadow: 0 0 20rpx #FF1472,0 0 20rpx #FF1472;
 }
 .submit{
   width: 100%;

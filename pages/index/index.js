@@ -14,7 +14,6 @@ Page({
   
 
   onLoad: function () {
-    console.log(app.globalData)
     wx.getUserInfo({
       success: (res) => {
         this.setData({
@@ -26,7 +25,18 @@ Page({
       title: 'aa',
       mask: true
     })
-    app.login().then(res => {
+    if (app.globalData.isLogin) {
+      this.getCheckWorker()
+    } else {
+      app.login().then(res => {
+        this.getCheckWorker()
+      })
+    }
+    
+  },
+
+  onShow: function () {
+    if (app.globalData.isLogin) {
       app.ajax('xcx/user/getCheckWorker', 'POST').then(res => {
         wx.hideLoading()
         this.setData({
@@ -35,11 +45,49 @@ Page({
           loading: false
         })
       })
-    })
+    }
   },
 
-  onShow: function () {
-    console.log('a')
+  // 下拉刷新
+  onPullDownRefresh: function () {
+    if (app.globalData.isLogin) {
+      this.getCheckWorker().then(res => {
+        if (res.data.success) {
+          wx.stopPullDownRefresh()
+        }
+        
+      })
+    } else {
+      app.login().then(res => {
+        this.getCheckWorker().then(res => {
+          if (res.data.success) {
+            wx.stopPullDownRefresh()
+          }
+        })
+      })
+    }
+  },
+
+  // 获取当天出勤人员
+
+  getCheckWorker: function() {
+    return new Promise ((resolve, reject) => {
+      app.ajax('xcx/user/getCheckWorker', 'POST').then(res => {
+        wx.hideLoading()
+        if (res.data.success) {
+          this.setData({
+            userList: res.data.body.checkWorkJoindata,
+            checkWorkdata: res.data.body.checkWorkdata,
+            loading: false
+          })
+          resolve(res)
+        } else {
+          reject(res)
+        }
+        
+      })
+    })
+    
   },
 
   // 添加出勤人员

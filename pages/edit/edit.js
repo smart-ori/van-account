@@ -20,6 +20,15 @@ Page({
     })
   },
 
+  onPullDownRefresh: function () {
+    app.ajax('xcx/user/getAllWorker', 'POST').then(res => {
+      this.setData({
+        userList: res.data.body.data
+      })
+      wx.stopPullDownRefresh()
+    })
+  },
+
   // 签到
   checkUser: function (e) {
     let index = e.detail.value[0] || e.target.dataset.index
@@ -36,12 +45,13 @@ Page({
   },
   // 临时结账
   checkTem (e) {
-    let index = e.detail.value[0] || e.target.dataset.index
-    if (e.detail.value[0]) {
-      this.data.userList[index].tem = true
-    } else {
-      this.data.userList[index].tem = false
-    }
+    let index = e.target.dataset.index
+    // if (e.detail.value[0]) {
+    //   this.data.userList[index].tem = true
+    // } else {
+    //   this.data.userList[index].tem = false
+    // }
+    this.data.userList[index].tem = !this.data.userList[index].tem
     this.setData({
       userList: this.data.userList
     })

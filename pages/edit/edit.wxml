@@ -6,11 +6,9 @@
   </view>
   
   <view class="user-list">
-    <view class="item" wx:for="{{userList}}" wx:key="{{item.id}}">
+    <view class="item {{item.attend?'active':''}}" wx:for="{{userList}}" wx:key="{{item.id}}">
       <label class="user">
-        <checkbox-group data-workerId="{{item.id}}" data-index="{{index}}" bindchange="checkUser">
-          <checkbox value="{{index}}"></checkbox>
-        </checkbox-group>
+        
         
         <view class="info">
           <view class="name">{{item.name}}</view>
@@ -18,9 +16,10 @@
           <view class="address">-{{item.address}}</view>
         </view>
       </label>
-      <label class="tem">
-        <view class="info">临时结账</view>
-        <checkbox-group data-workerId="{{item.id}}" data-index="{{index}}" bindchange="checkTem">
+      <label class="check">
+        <view class="info {{item.tem?'active':''}}" data-index="{{index}}" catchtap='checkTem'>临</view>
+        
+        <checkbox-group data-workerId="{{item.id}}" data-index="{{index}}" bindchange="checkUser">
           <checkbox value="{{index}}"></checkbox>
         </checkbox-group>
         
