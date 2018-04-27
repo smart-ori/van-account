@@ -16,6 +16,11 @@ Page({
   onShow: function () {
     this.getMomentBill()
   },
+  
+  // 下拉刷新
+  onPullDownRefresh: function () {
+    this.getMomentBill()
+  },
 
   //事件处理函数
 
@@ -30,6 +35,7 @@ Page({
 
   getMomentBill() {
     app.ajax('xcx/user/getMomentBill', 'POST').then(res => {
+      wx.stopPullDownRefresh()
       this.setData({
         temBill: res.data.body.data
       })
