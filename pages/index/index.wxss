@@ -14,7 +14,6 @@ page{
   display: flex;
   align-items: center;
   margin-top: 20rpx;
-  border-bottom: solid 1px #ddd;
   background-image: radial-gradient(circle at left top,#1F8C31, #4ECC62);
   color: #fff;
 }
@@ -57,14 +56,14 @@ page{
 
 .hr{
   margin-top: 5rpx;
-  background-color: #ddd;
+  background-color: #68D87A;
   height: 10rpx;
 }
 .user-list {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  align-content: flex-start;
   background-color: #f8f8f8;
 }
 
@@ -87,48 +86,43 @@ page{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   overflow: hidden;
   box-shadow: 0 0 10px #999;
-  background-image: radial-gradient(at 50% 78%, #4dfd47 8%,#23e621,#028500  );
+  background-image: radial-gradient(at 50% 78%, #4dfd47 8%,#23e621,#028500);
+}
+.user-list .item.woman .content {
+  background-image: radial-gradient(at 50% 78%, #FC77DA 8%,#DC3CB3,#AF1487);
 }
 .user-list .item .content .name{
   width: 111rpx;
-  height: 65rpx;
+  height: 80rpx;
   border-radius: 50%;
-  text-align: center;
   color: #555;
   font-weight: 900;
-  font-size: 16px;
-  
+  font-size: 12px;
   background-image: linear-gradient(180deg, rgba(255,255,255,1),  rgba(255,255,255,0) 90%);
-  line-height: 75rpx;
   margin-top: 8rpx;
-}
-.user-list .item .content .tem{
-  padding: 5rpx 0;
-  background-color: #ddd;
-  width: 100%;
   text-align: center;
-  font-weight: 600;
-  background-image: radial-gradient(at 50% 78%, yellow 8%, orange,red);
-  color: #3163D1;
-  font-size: 16px;
-  height: 40rpx;
+  line-height: 30rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 10rpx;
+  box-sizing: border-box;
 }
-.user-list .item .content .sex{
-  color: #555;
+.user-list .item .content .tem{
+  padding: 2rpx 0;
+  width: 100%;
   font-size: 14px;
+  background-image: radial-gradient(at 50% 78%, yellow 8%, orange,red);
+  color: #3163D1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
-.user-list .item.active .content{
-  background-color: #7BD8C5;
-}
-.user-list .item .content .tem.active{
-  background-color: #FFA3A3;
-}
+
 
 .no-staff{
   height: 100vh;

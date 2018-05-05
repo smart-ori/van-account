@@ -35,7 +35,6 @@ App({
     return new Promise((resolve, reject) => {
       wx.login({
         success: res => {
-          console.log(res.code)
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           wx.request({
             url: 'https://www.meijile.xin/api/xcx/login',
@@ -84,7 +83,11 @@ App({
           "content-type": method === 'POST' ? "application/x-www-form-urlencoded" :"application/json"
         },
         success: res => {
-          resolve(res)
+          if (res.data.code === 401) {
+            this.login()
+          } else {
+            resolve(res)
+          }
         },
         fail: err => {
           reject(err)

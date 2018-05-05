@@ -1,0 +1,26 @@
+<view class='manage'>
+  
+  <view class="overview">
+    <view class="total">总人数： {{total}}</view>
+    <view class="man-total">男： {{manTotal}}</view>
+    <view class="woman-total">女： {{womanTotal}}</view>
+  </view>
+
+  <view class='content'>
+    <view class='item' wx:for="{{userList}}" wx:key="{{item.id}}">
+      <view class="info">
+        <view class="name">{{item.name}}</view>
+        <view class="sex">-{{item.sex===1?'男':'女'}}</view>
+        <view class="address">-{{item.address}}</view>
+      </view>
+      <view class="edit-btn">
+        <button class="weui-btn mini-btn" type="warn" size="mini">删除</button>
+        <button class="weui-btn mini-btn" type="primary" size="mini" data-index="{{index}}" bindtap='editUser'>编辑</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="add-user">
+    <button type="primary" bindtap='addUser'>新增人员</button>
+  </view>
+</view>

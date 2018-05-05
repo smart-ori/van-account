@@ -19,11 +19,11 @@
   <view class="hr" wx:if="{{checkWorkdata!==null}}"></view>
 
   <view class="user-list" wx:if="{{checkWorkdata!==null}}">
-    <view class="item active" wx:for="{{userList}}" wx:key="name">
+    <view class="item {{item.sex===1?'man':'woman'}}" wx:for="{{userList}}" wx:key="name">
       <view class="content">
         <view class="name">{{item.workerName}}</view>
         <view class="tem" wx:if="{{item.type===1}}">已结账</view> 
-        <view class="sex">{{item.sex===1?'男':'女'}}</view>
+        <view class="sex">{{item.address}}</view>
       </view>
       
     </view>

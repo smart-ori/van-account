@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    operate: '',    // 编辑 还是 添加 人员
     state: 0,       // 判断当前 input:focus状态
     name: '',
     phone: '',
@@ -14,7 +15,7 @@ Page({
     type: '',             // 类型 1、公共2、私有
     sex: '',              // 性别 1 男 2 女
     workerOffer: [],      // 工资标准
-    offerIndex: 0 // 当前选中的工资标准 
+    offerIndex: 0         // 当前选中的工资标准 
   },
 
   // 输入框 获取焦点
@@ -42,19 +43,18 @@ Page({
     })
   },
   offerChange: function (e) {
-    console.log(typeof e.detail.value)
     this.setData({
       offerIndex: e.detail.value
     })
   },
   sexChange: function (e) {
     this.setData({
-      sex: e.detail.value
+      sex: e.detail.value * 1
     })
   },
   typeChange: function (e) {
     this.setData({
-      type: e.detail.value
+      type: e.detail.value * 1
     })
   },
 
@@ -95,28 +95,65 @@ Page({
       })
       return
     }
+
+    if (this.data.operate === 'add') {
+      app.ajax('xcx/user/addWorker', 'POST', {
+        name: this.data.name,
+        sex: this.data.sex,
+        address: this.data.address,
+        phone: this.data.phone,
+        payOfferId: this.data.workerOffer[this.data.offerIndex]['id'],
+        type: this.data.type,
+      }).then(res => {
+        if (res.data.success) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success'
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 1000)
+        } else {
+          wx.showToast({
+            title: '保存失败',
+            icon: 'none'
+          })
+        }
+      })
+    } else if (this.data.operate === 'edit') {
+      let userInfo = wx.getStorageSync('editUserInfo')
+      userInfo = JSON.parse(userInfo)
+      app.ajax('xcx/user/editWorker', 'POST', {
+        id: userInfo.id,
+        name: this.data.name,
+        sex: this.data.sex,
+        address: this.data.address,
+        phone: this.data.phone,
+        payOfferId: this.data.workerOffer[this.data.offerIndex]['id'],
+        type: this.data.type,
+      }).then(res => {
+        if (res.data.success) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success'
+          })
+          setTimeout(()=>{
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 1000)
+        } else {
+          wx.showToast({
+            title: '修改失败',
+            icon: 'none'
+          })
+        }
+      })
+    }
     
-    app.ajax('xcx/user/addWorker', 'POST', {
-      name: this.data.name,
-      sex: this.data.sex,
-      address: this.data.address,
-      phone: this.data.phone,
-      payOfferId: this.data.workerOffer[this.data.offerIndex]['id'],
-      type: this.data.type,
-    }).then(res => {
-      if(res.data.success) {
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'success'
-        })
-      } else {
-        wx.showToast({
-          title: '保存失败',
-          icon: 'none'
-        })
-      }
-      console.log(res.data.success)
-    })
+    
 
   },
 
@@ -124,6 +161,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      operate: options.operate
+    })
+    
+    
     app.ajax('xcx/user/getWorkerOffer', 'POST').then(res => {
       let workerOffer = res.data.body.data
       workerOffer.map((item, index) => {
@@ -132,6 +174,30 @@ Page({
       this.setData({
         workerOffer: workerOffer
       })
+
+      if (this.data.operate === 'edit') {
+
+        let userInfo = wx.getStorageSync('editUserInfo')
+        userInfo = JSON.parse(userInfo)
+        console.log(userInfo)
+
+        this.data.workerOffer.map((item, index) => {
+          if (item.id === userInfo.payOfferId) {
+            this.setData({
+              offerIndex: index
+            })
+          }
+        })
+
+        this.setData({
+          name: userInfo.name,
+          phone: userInfo.phone,
+          address: userInfo.address,
+          type: userInfo.type,
+          sex: userInfo.sex
+
+        })
+      }
     })
   }
 })

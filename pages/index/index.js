@@ -22,7 +22,7 @@ Page({
       }
     })
     wx.showLoading({
-      title: 'aa',
+      title: '',
       mask: true
     })
     if (app.globalData.isLogin) {

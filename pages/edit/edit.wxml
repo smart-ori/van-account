@@ -1,15 +1,18 @@
 <view class="content">
-  <view class="add-user">
+  <!-- <view class="add-user">
     <button size="mini" type="primary" bindtap="addUser">
       新增人员+
     </button>
+  </view> -->
+  <view class='overview'>
+    <view class="total">已选总人数：{{total}}</view>
+    <view class="man-total">男： {{manTotal}}</view>
+    <view class="woman-total">女： {{womanTotal}}</view>
   </view>
   
   <view class="user-list">
-    <view class="item {{item.attend?'active':''}}" wx:for="{{userList}}" wx:key="{{item.id}}">
+    <view class="item {{item.checkType===2?'active':''}}" wx:for="{{userList}}" wx:key="{{item.id}}">
       <label class="user">
-        
-        
         <view class="info">
           <view class="name">{{item.name}}</view>
           <view class="sex">-{{item.sex===1?'男':'女'}}</view>
@@ -17,10 +20,10 @@
         </view>
       </label>
       <label class="check">
-        <view class="info {{item.tem?'active':''}}" data-index="{{index}}" catchtap='checkTem'>临</view>
+        <view class="info {{item.jieZhangType===1?'active':''}}" data-index="{{index}}" catchtap='checkTem'>临</view>
         
-        <checkbox-group data-workerId="{{item.id}}" data-index="{{index}}" bindchange="checkUser">
-          <checkbox value="{{index}}"></checkbox>
+        <checkbox-group data-workerId="{{item.id}}" data-index="{{index}}" data-sex="{{item.sex}}" bindchange="checkUser">
+          <checkbox value="{{index}}" checked="{{item.checkType===2}}"></checkbox>
         </checkbox-group>
         
       </label>
@@ -30,6 +33,7 @@
     
   </view>
   <view class="submit">
+    <button type="primary" bindtap='manage'>人员管理</button>
     <button type="primary" bindtap='submit'>确定</button>
   </view>
 </view>

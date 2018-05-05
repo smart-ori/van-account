@@ -28,7 +28,6 @@ page {
 }
 .sex,.type{
   display: flex;
-  justify-content: center;
   margin: 20rpx 0;
 }
 .sex label,.type label{

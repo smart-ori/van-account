@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/bill/bill",
+    "pages/manage/manage",
     "pages/edit/edit",
     "pages/add-user/add-user"
     
@@ -20,13 +21,13 @@
         "pagePath": "pages/index/index",
         "iconPath": "img/index.png",
         "selectedIconPath": "img/index_active.png",
-        "text": "主页"
+        "text": "今日出勤"
       },
       {
         "pagePath": "pages/edit/edit",
         "iconPath": "img/edit.png",
         "selectedIconPath": "img/edit_active.png",
-        "text": "编辑"
+        "text": "签到"
       },
       {
         "pagePath": "pages/bill/bill",

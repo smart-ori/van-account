@@ -2,50 +2,48 @@
 
   <label class="name">
     <view class="label">姓名：</view>
-    <input class="{{state==1?'active':''}}" data-state="1" bindfocus='focus' bindinput='nameInp'></input>
+    <input class="{{state==1?'active':''}}" value="{{name}}" data-state="1" bindfocus='focus' bindinput='nameInp'></input>
   </label>
 
   <label class="mobile">
     <view class="label">电话：</view>
-    <input class="{{state==2?'active':''}}" type="number" data-state="2" bindfocus='focus' bindinput='mobileInp'></input>
+    <input class="{{state==2?'active':''}}" type="number" value="{{phone}}" data-state="2" bindfocus='focus' bindinput='mobileInp'></input>
   </label>
 
   <label class="address">
     <view class="label">地址：</view>
-    <input class="{{state==3?'active':''}}" data-state="3" bindfocus='focus' bindinput='addressInp'></input>
+    <input class="{{state==3?'active':''}}" value="{{address}}" data-state="3" bindfocus='focus' bindinput='addressInp'></input>
   </label>
 
-  <!-- <label class="payOffer">
-    <view class="label">工资标准：</view>
-    <input class="{{state==4?'active':''}}" data-state="4" bindfocus='focus' bindinput='payOfferInp'></input>
-  </label> -->
    <picker value="{{offerIndex}}" range="{{workerOffer}}" range-key="info" bindchange="offerChange">
     <view class="picker">
-      工资标准：{{workerOffer[offerIndex].info}}
+      工资标准： {{workerOffer[offerIndex].info}}
     </view>
   </picker> 
 
   
   
   <radio-group class="sex" bindchange="sexChange">
+    <view class="info">性别：</view>
     <label class="man">
       男
-      <radio value="1"></radio>
+      <radio value="1" checked="{{sex===1}}"></radio>
     </label>
     <label class="woman">
       女
-      <radio value="2"></radio>
+      <radio value="2" checked="{{sex===2}}"></radio>
     </label>
   </radio-group>
 
   <radio-group class="type" bindchange="typeChange">
+    <view class="info">类型：</view>
     <label class="public">
       公共
-      <radio value="1"></radio>
+      <radio value="1" checked="{{type===1}}"></radio>
     </label>
     <label class="private">
       私有
-      <radio value="2"></radio>
+      <radio value="2" checked="{{type===2}}"></radio>
     </label>
   </radio-group>
 

@@ -58,7 +58,7 @@
 
     <view class="pay-tem item">
       <view class="msg">临时支出：</view>
-      <view class="money">￥50</view>
+      <view class="money">￥{{temBill.tempPay}}</view>
     </view>
 
     <view class="earn item">

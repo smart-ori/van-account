@@ -2,19 +2,22 @@
 page{
   background-color: #f8f8f8;
 }
-.add-user{
-  width: 100%;
+.overview{
   display: flex;
-  justify-content: flex-end;
-  margin-top: 20rpx;
+  background-image: radial-gradient(circle at left top,#1F8C31, #4ECC62);
+  color: #fff;
+  font-size: 14px;
+  padding: 10rpx;
+}
+.overview .man-total,.overview .woman-total{
+  margin-left: 30rpx;
 }
 .user-list{
   width: 100%;
   display: felx;
   flex-direction: column;
-  margin-bottom: 150rpx;
   overflow: auto;
-  height: calc(100vh - 230rpx);
+  height: calc(100vh - 180rpx);
 }
 .user-list .item{
   display: flex;
@@ -22,12 +25,14 @@ page{
   margin: 10rpx 0;
   padding: 20rpx;
   border-bottom: solid 1px #eee;
-  box-sizing: border-box;
   background-color: #fff;
+  border-radius: 5px;
+  border: solid 1px #fff;
 }
 .user-list .item.active{
-  background-color: #1AAD19;
-  color: #fff;
+  border-color: #1AAD19;
+  box-shadow: inset 0 0 10px #1AAD19;
+  box-sizing: border-box;
 }
 .user-list .item .user{
   display: flex;
@@ -68,7 +73,11 @@ page{
   position: fixed;
   bottom: 0;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
 }
 .submit button{
   font-size: 14px;
+  flex: 1;
+  margin: 0 10rpx;
 }
