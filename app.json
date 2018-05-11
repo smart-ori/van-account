@@ -5,7 +5,8 @@
     "pages/manage/manage",
     "pages/edit/edit",
     "pages/add-user/add-user",
-    "pages/person-attend/person-attend"
+    "pages/person-attend/person-attend",
+    "pages/week-attend/week-attend"
   ],
   "window": {
     "backgroundTextStyle": "dark",
