@@ -1,19 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/bill/bill",
     "pages/manage/manage",
     "pages/edit/edit",
-    "pages/add-user/add-user"
-    
+    "pages/add-user/add-user",
+    "pages/person-attend/person-attend"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "慧记账",
-    "navigationBarTextStyle":"black",
-    "enablePullDownRefresh": true,
-    "backgroundTextStyle": "dark"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "list": [
